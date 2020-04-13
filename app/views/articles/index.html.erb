@@ -1,0 +1,22 @@
+<h1>listing articles</h1>
+<%=link_to 'new article', new_article_path%>
+<table>
+  <tr>
+    <th>
+      title
+    </th>
+    <th>
+      text
+    </th>
+    <th></th>
+  </tr>
+  <% @articles.each do |article|%>
+  <tr>
+    <td><%=article.title%></td>
+
+    <td><%=article.text%></td>
+
+    <td><%=link_to 'show', article_path(article)%></td>
+  </tr>
+  <%end%>
+</table>
